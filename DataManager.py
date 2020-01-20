@@ -57,7 +57,7 @@ def isPasteInDB(conn, pasteID):
     :return: True if paste exists, False otherwise
     """
     cur = conn.cursor()
-    cur.execute("SELECT * FROM pastes WHERE pasteId=" + pasteID)
+    cur.execute("SELECT * FROM pastes WHERE pasteId='" + pasteID + "'")
     rows = cur.fetchall()
     return rows.__len__() != 0
 
